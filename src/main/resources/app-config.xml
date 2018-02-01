@@ -7,5 +7,7 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<bean id="paieUtils" class="dev.paie.util.PaieUtils"></bean>
 	
 	<bean id="bulletin1" class="dev.paie.entite.BulletinSalaire"></bean> 
+	
+
 </beans>
 

@@ -42,8 +42,11 @@ public class CalculerRemunerationServiceSimple implements CalculerRemunerationSe
 				.map(c -> c.getTauxPatronal()).map(taux -> taux.multiply(salaireBrut))
 				.reduce(BigDecimal.ZERO, BigDecimal::add);
 		// NET_IMPOSABLE = SALAIRE_BRUT - TOTAL_RETENUE_SALARIALE
-
+		
+		
 		BigDecimal netImposable = salaireBrut.subtract(totRetSalarial);
+	
+		
 
 		// NET_A_PAYER = NET_IMPOSABLE -
 		// SOMME(COTISATION_IMPOSABLE.TAUX_SALARIAL*SALAIRE_BRUT)
@@ -51,6 +54,8 @@ public class CalculerRemunerationServiceSimple implements CalculerRemunerationSe
 				.subtract(bulletin.getRemunerationEmploye().getProfilRemuneration().getCotisationsImposables().stream()
 						.filter(c -> c.getTauxSalarial() != null).map(c -> c.getTauxSalarial())
 						.map(taux -> taux.multiply(salaireBrut)).reduce(BigDecimal.ZERO, BigDecimal::add));
+		
+		
 
 		ResultatCalculRemuneration resultat = new ResultatCalculRemuneration();
 		resultat.setNetAPayer(paieUtils.formaterBigDecimal(netApayer));
