@@ -1,5 +1,7 @@
 package dev.paie.service;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
+
 import java.math.BigDecimal;
 
 import org.junit.Test;
@@ -29,6 +31,19 @@ public class AvantageRepositoryTest {
 		avantageRepository.save(avantage);
 		avantageRepository.findOne(avantage.getId());
 		
+		Avantage avantageAchanger = new Avantage( "M06", "changé", new BigDecimal("2.6"));
+		
+		for(int i =0 ; i< avantageRepository.count(); i++)
+		{
+			if(avantage.getCode().equals("M06"))
+			{
+				System.out.println(avantage.getCode());
+				System.out.println("boucle");
+				avantageRepository.delete(avantage);
+				avantageRepository.save(avantageAchanger);
+				
+			}
+		}
 		
 		
 		System.out.println(avantageRepository.count());
