@@ -2,12 +2,37 @@ package dev.paie.entite;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import dev.paie.entite.Periode;
+
+@Entity
+@Table(name="BulletinSalaire")
 public class BulletinSalaire {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
+	
+	@ManyToOne
+	@JoinColumn(name="RemunerationEmploye_ID")
 	private RemunerationEmploye remunerationEmploye;
+	
+	@ManyToOne
+	@JoinColumn(name="Periode_ID")
 	private Periode periode;
+	
 	private BigDecimal primeExceptionnelle;
+	
+	public BulletinSalaire(){
+		
+	}
 	
 	public RemunerationEmploye getRemunerationEmploye() {
 		return remunerationEmploye;
@@ -33,6 +58,8 @@ public class BulletinSalaire {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	
+
 	
 	
 	

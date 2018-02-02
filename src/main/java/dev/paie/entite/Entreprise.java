@@ -1,7 +1,22 @@
 package dev.paie.entite;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Entreprise")
 public class Entreprise {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String siret;
 	private String denomination;
@@ -9,6 +24,7 @@ public class Entreprise {
 	private String urssaf;
 	private String codeNaf;
 	
+
 	public String getDenomination() {
 		return denomination;
 	}
@@ -45,6 +61,8 @@ public class Entreprise {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	
+	
 	
 	
 }

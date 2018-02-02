@@ -42,7 +42,7 @@ public class GradeServiceJdbcTemplate implements GradeService {
 		grade.setNbHeuresBase(nbHeuresBase);
 		grade.setTauxBase(tauxBase);
 
-		String sql = "INSERT INTO bxitw9lvy.grade (code, nombreheure,tauxbase)VALUE(?,?,?) ";
+		String sql = "INSERT INTO bxitw9lvy.Grade (code, nbHeuresBase,tauxbase)VALUE(?,?,?) ";
 		// exécution de la requête et récupération du résultat
 
 		return this.jdbcTemplate.update(sql, code, nbHeuresBase, tauxBase);
@@ -63,7 +63,7 @@ public class GradeServiceJdbcTemplate implements GradeService {
 		
 		 String code1 = "M01";
 		
-		String sqlUpdate = "UPDATE bxitw9lvy.grade SET code=?, nombreheure=?, tauxbase=? WHERE code = ? ";
+		String sqlUpdate = "UPDATE bxitw9lvy.Grade SET code=?, nbHeuresBase=?, tauxBase=? WHERE code = ? ";
 		return jdbcTemplate.update(sqlUpdate,code,nbHeuresBase,tauxBase, code1);
 		
 		
@@ -80,7 +80,7 @@ public class GradeServiceJdbcTemplate implements GradeService {
 	public List<Grade> lister() {
 		
 		
-		String sql = "SELECT * FROM bxitw9lvy.grade";
+		String sql = "SELECT * FROM bxitw9lvy.Grade";
 	
 
 	

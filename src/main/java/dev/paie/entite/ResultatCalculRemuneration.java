@@ -1,13 +1,27 @@
 package dev.paie.entite;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
 public class ResultatCalculRemuneration {
 
-	
+
+	private int Id;
+
 	private String salaireDeBase;
+	
 	private String salaireBrut;
+
 	private String totalRetenueSalarial;
+	
 	private String totalCotisationsPatronales;
+	
 	private String netImposable;
+
 	private String netAPayer;
 	
 	

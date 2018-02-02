@@ -26,9 +26,10 @@ public class GradeServiceJdbcTemplateTest {
 	
 	Grade grade = new Grade();
 	
-	gradeService.sauvegarder(grade);
+	//gradeService.sauvegarder(grade);
 	
 	//gradeService.mettreAJour(grade);
+	gradeService.lister();
 	
 	
 
