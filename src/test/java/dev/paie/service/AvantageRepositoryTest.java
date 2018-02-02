@@ -37,7 +37,7 @@ public class AvantageRepositoryTest {
 		{
 			if(avantage.getCode().equals("M06"))
 			{
-				System.out.println(avantage.getCode());prout
+				System.out.println(avantage.getCode());
 				System.out.println("boucle");
 				avantageRepository.delete(avantage);
 				avantageRepository.save(avantageAchanger);
