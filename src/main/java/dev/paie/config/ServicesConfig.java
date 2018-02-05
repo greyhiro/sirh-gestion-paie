@@ -11,4 +11,5 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories("dev.paie.repository")
 
 	public class ServicesConfig {
+	
 	}
