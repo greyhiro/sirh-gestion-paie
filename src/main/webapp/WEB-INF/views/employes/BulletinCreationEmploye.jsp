@@ -41,7 +41,7 @@
 
 
 				<c:forEach items="${entreprise}" var="name">
-					<option>
+					<option value="${name.id}">
 						<c:out value="${name.denomination}" /></option>
 				</c:forEach>
 			</select>
@@ -51,7 +51,7 @@
 			<label for="Profil">Profil</label> <select id="Profil"
 				class="form-control" name="Profil">
 				<c:forEach items="${profil}" var="name">
-					<option>
+					<option value="${name.id}">
 						<c:out value="${name.code}" /></option>
 				</c:forEach>
 			</select>
@@ -60,9 +60,10 @@
 		<div class="form-group">
 			<label for="Profil">Grade</label> <select id="Grade"
 				class="form-control" name="Grade">
-				<c:forEach items="${grade}" var="name">
-					<option>
-						<c:out value="${name.code} ${name.tauxBase} euros/ans" /></option>
+				<c:forEach  items="${grade}" var="name">
+					<option  value="${name.id}">
+					
+						<c:out value="${name.code}  ${name.nbHeuresBase*name.tauxBase} euros/ans" /></option>
 				</c:forEach>
 			</select>
 		</div>

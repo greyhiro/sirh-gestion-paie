@@ -5,6 +5,10 @@
 <meta charset="UTF-8">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
+
+<a href="#">Employés</a>
+<a href="#">Bulletin</a>
 <html>
 <div class= container>
 <div class=row>
@@ -16,18 +20,15 @@
       <th scope="col">Grade</th>
 
     </tr>
- <c:forEach items="${periode}" var="name">
+ <c:forEach items="${remEmploye}" var="name">
 					
-						<td><c:out value="${name.dateDebut}" /></td>
+						<tr>
+						<td>${formater.formaterDateTime(name.date)}</td>
+						<td><c:out value="${name.matricule}" /></td>
+						<td><c:out value="${name.grade.code}" /></td>
+						</tr>
 						
 				</c:forEach>
-				
-				<c:forEach items="${periode}" var="name">
-					
-						<td><c:out value="${name.dateDebut}" /></td>
-						
-				</c:forEach>
-		
 			</tr>
 			
 </table>
